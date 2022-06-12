@@ -1,13 +1,3 @@
-library(dplyr)
-library(tidyr)
-library(pamr)
-library(MASS)
-library(randomForest)
-library(gdata)
-library(caret)
-library(lamisc)
-
-
 library(splitTools)
 library(varSelRF)
 library(tidyverse)
@@ -85,7 +75,7 @@ filter_combined = filter_by_fold & filter_by_pvalue
 filtered = data[filter_combined,]
 filtered_t = as.data.frame(as.matrix(t(filtered)))
 dim(filtered)
-filtered_combined = combined[rownames(combined) %in% rownames(filtered),] ##### CHECK THIS PAAAAAAAAAAAAAAAAAAAART
+filtered_combined = combined[rownames(combined) %in% rownames(filtered),]
 Probes_with_changes = filtered_combined[,1:3]
 UpProbes = Probes_with_changes$Row.names[which(Probes_with_changes$fold>0)]
 DownProbes = Probes_with_changes$Row.names[which(Probes_with_changes$fold<0)]
