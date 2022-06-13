@@ -9,7 +9,7 @@ write.table(Hypobed, file = "BEDfile Hypo pN0 vs All.bed", sep = "\t", row.names
 Hyperbed = ann[ann$probe %in% UpProbes,]
 write.table(Hyperbed, file = "BEDfile Hyper pN0 vs All.bed", sep = "\t", row.names = F)
 
-# We charge these BEDfiles in MEME/T-Gene to identify genes affected by these CpG sites #
+# We upload these BEDfiles in MEME/T-Gene to identify genes affected by these CpG sites #
 
 #### Gene Enrichment ####
 hyper_genes = read.table("Hyper T-Gene/links.tsv", sep = "\t", header = T)
